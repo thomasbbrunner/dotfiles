@@ -1,0 +1,21 @@
+
+[init]
+  defaultBranch = main
+
+[alias]
+  st = status --show-stash
+  co = checkout
+  lg = log --graph --all
+  cm = commit --verbose
+  sw = switch
+
+[core]
+  editor = nvim
+  pager = less
+
+[pager]
+  branch = false
+  tag = false
+
+[include]
+  path = ~/dotfiles/git/private.gitconfig

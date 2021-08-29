@@ -1,0 +1,58 @@
+# File with configurations for bash
+#
+
+# cd
+alias cdd='cd ~/dotfiles'
+alias cdt='cd ~/thesis'
+alias cdc='cd ~/code'
+
+# ls
+alias ll='ls -alhF'
+alias l='ls -alhF'
+alias la='ls -A'
+
+# less
+export LESS="-iRw"
+
+# inputrc
+# Default is in /etc/inputrc
+export INPUTRC=~/dotfiles/bash/inputrc
+
+# Colored terminal
+eval "`dircolors`"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# Add custom scripts to path
+export PATH=$PATH:~/dotfiles/bin
+
+# Bash history
+HISTSIZE=100000
+HISTFILESIZE=200000
+HISTCONTROL=ignoreboth:erasedups # ignore duplicate commands and commands starting with whitespace
+shopt -s histappend # append history file, don't overwrite
+
+# Prompt customization
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;94m\]\w\[\033[00m\] \[\e[01;93m\]$(parse_git_branch)\[\e[00m\]> '
+
+# Set name of terminal window
+PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+
+# Configure python
+alias py='python3'
+alias ipy='ipython3'
+alias pdb='pdb3'
+alias ipdb='ipdb3'
+
+# Line wrap on window resize
+shopt -s checkwinsize
+
+# Auto cd when running directory
+shopt -s autocd
+
+# fzf
+# source /usr/share/doc/fzf/examples/key-bindings.bash
+# source /usr/share/doc/fzf/examples/completion.bash

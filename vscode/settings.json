@@ -1,0 +1,53 @@
+{
+    // Enables the simple file dialog. The simple file dialog replaces the system file dialog when enabled.
+    "files.simpleDialog.enable": true,
+
+    // Controls whether to use `.gitignore` and `.ignore` files when searching for files.
+    "search.useIgnoreFiles": false,
+
+    // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty.
+    "editor.rulers": [80, 100, 120],
+
+    // Controls whether the Linux primary clipboard should be supported.
+    // disable pasting with middle click
+    "editor.selectionClipboard": false,
+
+    // Controls whether to follow symlinks while searching.
+    "search.followSymlinks": false,
+
+    // Language-specific settings
+    "[latex]": {
+        // force wrapping of lines
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 100,
+        // don't suggest words which are not commands
+        "editor.wordBasedSuggestions": false,
+    },
+
+    // Extension settings
+    "latex-workshop.view.pdf.viewer": "tab",
+    // Store generated files in .tmp folder
+    "latex-workshop.latex.outDir": "%DIR%/.tmp",
+    "python.formatting.provider": "autopep8",
+    "python.linting.pycodestyleArgs": ["--max-line-length 100"],
+    "glsllint.glslangValidatorPath": "/usr/bin/glslangValidator",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.startupEditor": "none",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "python.formatting.autopep8Path": "/usr/bin/autopep8",
+    "latex-workshop.latex.autoBuild.run": "never",
+    // prevents bugs when using the fish shell remotely
+    "remote.SSH.remotePlatform": {
+        "thisthree": "linux",
+    },
+    "gitlens.views.fileHistory.avatars": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.views.commits.files.layout": "list",
+}

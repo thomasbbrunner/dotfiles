@@ -1,0 +1,14 @@
+
+Include ~/dotfiles/ssh/private.ssh_config
+
+Host *
+    # prevent ssh session from dying due to inactivity
+    ServerAliveInterval 30 
+
+Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+
+Host gitlab.lrz.de
+    HostName gitlab.lrz.de
+    PreferredAuthentications publickey
